@@ -1,0 +1,16 @@
+composer install --ignore-platform-reqs
+##create mysql db "money_coach" /w collation "utf8_general_ci"
+
+##
+## php artisan db:wipe 
+## Update these values(Below) of mysql array in /config/database.php
+## 'charset' => 'utf8', 'collation' => 'utf8_general_ci',
+## 
+##https://stackoverflow.com/questions/42244541/laravel-migration-error-syntax-error-or-access-violation-1071-specified-key-wa
+##https://github.com/laravel/framework/issues/17508
+## Schema::defaultStringLength(191);
+
+php artisan migrate:fresh --seed
+
+
+## admin@admin.com - password
